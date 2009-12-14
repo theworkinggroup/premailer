@@ -1,6 +1,6 @@
-require File.dirname(__FILE__) + '/test_helper'
+require File.dirname(__FILE__) + '/../test_helper'
 
-class TestHtmlToPlainText < Test::Unit::TestCase
+class HtmlToPlainTextTest < Test::Unit::TestCase
   include HtmlToPlainText
 
   def test_accents

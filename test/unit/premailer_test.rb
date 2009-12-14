@@ -1,7 +1,7 @@
-require File.dirname(__FILE__) + '/test_helper'
+require File.dirname(__FILE__) + '/../test_helper'
 require 'webrick'
 
-class TestPremailer < Test::Unit::TestCase
+class PremailerTest < Test::Unit::TestCase
   include WEBrick
 
   def test_accents
@@ -65,7 +65,7 @@ class TestPremailer < Test::Unit::TestCase
   
 protected
   def local_setup
-    base_file = File.dirname(__FILE__) + '/files/base.html'  
+    base_file = File.dirname(__FILE__) + '/../files/base.html'  
     premailer = Premailer.new(base_file)
     premailer.to_inline_css
     @doc = premailer.processed_doc

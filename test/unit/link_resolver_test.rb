@@ -1,6 +1,6 @@
-require 'test_helper'
+require File.dirname(__FILE__) + '/../test_helper'
 
-class TestLinkResolver < Test::Unit::TestCase
+class LinkResolverTest < Test::Unit::TestCase
   def test_resolving_urls_from_string
     ['test.html', '/test.html', './test.html', 
      'test/../test.html', 'test/../test/../test.html'].each do |q|
@@ -22,7 +22,7 @@ class TestLinkResolver < Test::Unit::TestCase
   end
 
   def test_resolving_urls_in_doc
-    base_file = File.dirname(__FILE__) + '/files/base.html'
+    base_file = File.dirname(__FILE__) + '/../files/base.html'
     base_url = 'https://my.example.com:8080/test-path.html'
     premailer = Premailer.new(base_file, :base_url => base_url)
     premailer.to_inline_css
